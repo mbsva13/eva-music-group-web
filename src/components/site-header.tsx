@@ -13,7 +13,7 @@ const navigation = [
 ];
 
 const navLinkClass =
-  "rounded-md px-1.5 py-2 text-sm font-medium text-white/75 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-eva-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-eva-navy-950 2xl:px-2";
+  "rounded-md px-1.5 py-2 text-sm font-medium text-white/85 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-eva-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-eva-navy-950 2xl:px-2";
 
 export function SiteHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -35,13 +35,14 @@ export function SiteHeader() {
 
   return (
     <header
-      className="relative z-50 w-full border-b border-white/10 text-white"
-      style={{ backgroundColor: "var(--color-eva-navy-950)" }}
+      className={`absolute inset-x-0 top-0 z-50 w-full text-white transition-colors duration-200 ${
+        isMenuOpen ? "bg-[#030914]/95 backdrop-blur-xl" : "bg-transparent"
+      }`}
     >
       <div className="mx-auto flex h-20 w-full max-w-[90rem] items-center justify-between gap-6 px-5 sm:px-8 lg:px-10 2xl:gap-10">
         <Link
           href="/"
-          className="font-display shrink-0 rounded-md text-lg font-extrabold tracking-[-0.04em] text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-eva-blue-400 focus-visible:ring-offset-4 focus-visible:ring-offset-eva-navy-950"
+          className="font-display shrink-0 rounded-md text-xl font-semibold tracking-[-0.03em] text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-eva-blue-400 focus-visible:ring-offset-4 focus-visible:ring-offset-eva-navy-950"
           onClick={closeMenu}
         >
           EVA Music Group
@@ -62,7 +63,7 @@ export function SiteHeader() {
         <div className="hidden shrink-0 items-center gap-3 xl:flex">
           <Link
             href="/login"
-            className="inline-flex min-h-11 items-center justify-center rounded-[var(--radius-eva)] border border-white/15 px-4 text-sm font-semibold text-white transition-colors hover:border-white/35 hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-eva-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-eva-navy-950"
+            className="inline-flex min-h-11 items-center justify-center rounded-[var(--radius-eva)] border border-white/15 bg-white/[0.03] px-5 text-sm font-medium text-white backdrop-blur-md transition-colors hover:border-white/35 hover:bg-white/8 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-eva-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-eva-navy-950"
           >
             Log in
           </Link>

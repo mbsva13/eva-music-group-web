@@ -41,7 +41,7 @@ export function HeroArtwork() {
 
         <div className="absolute inset-0">
           <ArtCard
-            style={{ left: 150, top: 15, width: 145, height: 150, zIndex: 10 }}
+            style={{ left: 150, top: 0, width: 150, height: 115, zIndex: 10 }}
             artwork="/artwork/new-horizon.png"
           />
           <ArtCard
@@ -51,11 +51,11 @@ export function HeroArtwork() {
           />
           <ArtCard
             style={{ left: 385, top: 0, width: 150, height: 115, zIndex: 8 }}
-            tone="ocean"
+            artwork="/artwork/sea.png"
           />
 
           <ArtCard
-            style={{ left: 20, top: 135, width: 235, height: 275, zIndex: 20 }}
+            style={{ left: 34, top: 135, width: 235, height: 275, zIndex: 20 }}
             artwork="/artwork/afterglow.png"
             title="Afterglow"
             titleStyle="afterglow"
@@ -63,11 +63,11 @@ export function HeroArtwork() {
 
           <div
             className="pointer-events-none absolute rounded-[2rem] bg-blue-500/55 blur-[38px]"
-            style={{ left: 215, top: 60, width: 320, height: 360, zIndex: 29 }}
+            style={{ left: 229, top: 60, width: 320, height: 360, zIndex: 29 }}
           />
 
           <ArtCard
-            style={{ left: 225, top: 70, width: 300, height: 340, zIndex: 30 }}
+            style={{ left: 239, top: 70, width: 300, height: 340, zIndex: 30 }}
             artwork="/artwork/dreams.png"
             title="Dreams"
             subtitle="Always win"
@@ -77,12 +77,12 @@ export function HeroArtwork() {
           <StreamsCard />
 
           <ArtCard
-            style={{ left: 539, top: 160, width: 80, height: 145, zIndex: 15 }}
-            tone="ember"
+            style={{ left: 497, top: 160, width: 122, height: 145, zIndex: 15 }}
+            artwork="/artwork/crimson.png"
           />
           <ArtCard
             style={{ left: 633, top: 160, width: 122, height: 145, zIndex: 20 }}
-            tone="forest"
+            artwork="/artwork/palm.png"
           />
 
           <Vinyl />
@@ -106,7 +106,7 @@ function BackGlow() {
     <div className="pointer-events-none absolute inset-0">
       <div className="absolute -left-[60px] top-[40px] h-[480px] w-[880px] rounded-full bg-blue-700/25 blur-[130px]" />
 
-      <div className="absolute left-[230px] top-[70px] h-[360px] w-[320px] rounded-full bg-[radial-gradient(circle,rgba(96,165,250,0.75)_0%,rgba(37,99,235,0.45)_40%,transparent_72%)] blur-[60px]" />
+      <div className="absolute left-[244px] top-[70px] h-[360px] w-[320px] rounded-full bg-[radial-gradient(circle,rgba(96,165,250,0.75)_0%,rgba(37,99,235,0.45)_40%,transparent_72%)] blur-[60px]" />
 
       <div className="absolute left-[470px] -top-[40px] h-[220px] w-[320px] rounded-full bg-blue-500/40 blur-[90px]" />
 
@@ -213,7 +213,7 @@ function CoverTitle({
   return (
     <>
       <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_60%,rgba(3,8,18,0.35)_100%)]" />
-      <div className="absolute bottom-[3.75rem] right-6 z-10 text-center">
+      <div className="absolute bottom-7 right-6 z-10 text-center">
         <strong className="block text-[1.05rem] font-light uppercase tracking-[0.5em] text-white/95">
           {title}
         </strong>
@@ -223,7 +223,7 @@ function CoverTitle({
           </span>
         )}
       </div>
-      <span className="absolute bottom-[3.75rem] left-5 z-10 block text-[0.4rem] uppercase leading-tight tracking-[0.2em] text-white/55">
+      <span className="absolute bottom-6 left-5 z-10 block text-[0.4rem] uppercase leading-tight tracking-[0.2em] text-white/55">
         Eva
         <br />
         Records
@@ -285,8 +285,18 @@ function FeaturedTrack() {
 
   return (
     <article
-      style={{ left: 135, top: 368, width: 390, zIndex: 50 }}
-      className="group/player absolute flex cursor-pointer items-center gap-4 rounded-2xl border border-white/12 bg-[#0a1834]/85 p-3.5 shadow-[0_24px_60px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-xl transition-[scale,translate,box-shadow,border-color] duration-300 ease-out hover:-translate-y-1 hover:scale-[1.03] hover:border-white/25 hover:shadow-[0_32px_80px_rgba(0,0,0,0.55),0_0_44px_rgba(59,130,246,0.3)] motion-reduce:transition-none motion-reduce:hover:translate-y-0 motion-reduce:hover:scale-100"
+      style={
+        {
+          left: 149,
+          top: 396,
+          width: 390,
+          zIndex: 50,
+          "--float": "-8px",
+          animationDuration: "7.5s",
+          animationDelay: "-2s",
+        } as React.CSSProperties
+      }
+      className="group/player absolute flex animate-float cursor-pointer items-center gap-4 rounded-2xl border border-white/12 bg-[#0a1834]/85 p-3.5 shadow-[0_24px_60px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-xl transition-[scale,translate,box-shadow,border-color] duration-300 ease-out hover:-translate-y-1 hover:scale-[1.03] hover:border-white/25 hover:shadow-[0_32px_80px_rgba(0,0,0,0.55),0_0_44px_rgba(59,130,246,0.3)] motion-reduce:animate-none motion-reduce:transition-none motion-reduce:hover:translate-y-0 motion-reduce:hover:scale-100"
     >
       <div className="relative h-[76px] w-[76px] shrink-0 overflow-hidden rounded-xl">
         <Image
