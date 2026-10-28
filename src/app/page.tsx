@@ -3,6 +3,7 @@ import { SiteHeader } from "@/components/site-header";
 import { PlatformStrip } from "@/components/platform-strip";
 import { FeaturesSection } from "@/components/features-section";
 import { HowItWorks } from "@/components/how-it-works";
+import { AudienceSections } from "@/components/audience-sections";
 
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
 <PlatformStrip />
 <FeaturesSection />
 <HowItWorks />
+<AudienceSections />
       </main>
     </>
   );

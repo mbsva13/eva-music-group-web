@@ -33,7 +33,7 @@ export function HowItWorks() {
   return (
     <section
       aria-labelledby="how-it-works-heading"
-      className="bg-[#f6f8fc] px-5 pb-16 sm:px-8 sm:pb-20 lg:px-10 lg:pb-24"
+      className="bg-[#f6f8fc] px-5 pb-8 sm:px-8 sm:pb-10 lg:px-10 lg:pb-12"
     >
       <div className="mx-auto w-full max-w-[90rem] rounded-3xl bg-[linear-gradient(135deg,#0b1730_0%,#060d1d_100%)] px-6 py-10 text-white shadow-[0_24px_60px_rgba(6,13,29,0.25)] sm:px-10 sm:py-12 xl:grid xl:grid-cols-[minmax(0,0.75fr)_minmax(0,2.25fr)] xl:items-center xl:gap-12 xl:px-12">
         <div>
