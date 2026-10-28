@@ -40,7 +40,7 @@ export function FeaturesSection() {
       aria-labelledby="features-heading"
       className="bg-[linear-gradient(180deg,#eef2f8_0%,#f6f8fc_100%)] text-slate-900"
     >
-      <div className="mx-auto w-full max-w-[90rem] px-5 py-16 sm:px-8 sm:py-20 lg:px-10 lg:py-24">
+      <div className="mx-auto w-full max-w-[90rem] px-5 pb-10 pt-8 sm:px-8 sm:pb-12 sm:pt-10 lg:px-10 lg:pb-14 lg:pt-12">
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-[0.65rem] font-bold uppercase tracking-[0.22em] text-slate-500 sm:text-xs">
             Why choose EVA Music Group
