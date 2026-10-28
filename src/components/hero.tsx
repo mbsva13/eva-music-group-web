@@ -6,7 +6,7 @@ export function Hero() {
   return (
     <section
       aria-labelledby="hero-heading"
-      className="relative isolate overflow-hidden text-white"
+      className="relative isolate overflow-hidden pt-20 text-white"
       style={{
         background:
           "radial-gradient(circle at 73% 48%, rgb(20 103 245 / 18%), transparent 34%), radial-gradient(circle at 48% 100%, rgb(47 128 255 / 9%), transparent 38%), var(--color-eva-navy-950)",
