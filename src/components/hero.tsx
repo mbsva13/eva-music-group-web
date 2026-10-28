@@ -1,5 +1,6 @@
 import Link from "next/link";
 import "@fontsource-variable/inter-tight";
+import { HeroArtwork } from "./hero-artwork";
 
 export function Hero() {
   return (
@@ -59,7 +60,9 @@ export function Hero() {
           </div>
         </div>
 
-        <div aria-hidden="true" className="min-h-0 lg:min-h-[28rem]" />
+        <div className="min-w-0 lg:min-h-[28rem]">
+          <HeroArtwork />
+        </div>
       </div>
     </section>
   );
