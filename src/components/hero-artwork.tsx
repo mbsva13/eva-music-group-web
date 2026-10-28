@@ -1,5 +1,6 @@
 import Image from "next/image";
 
+// Fixed 760×560 stage, scaled per breakpoint, so the composition never drifts.
 
 type Tone = "violet" | "ember" | "forest" | "ink" | "ocean";
 
@@ -50,7 +51,7 @@ export function HeroArtwork() {
           />
           <ArtCard
             style={{ left: 385, top: 0, width: 150, height: 115, zIndex: 8 }}
-            artwork="/artwork/sea.png"
+            tone="ocean"
           />
 
           <ArtCard
@@ -77,11 +78,11 @@ export function HeroArtwork() {
 
           <ArtCard
             style={{ left: 539, top: 160, width: 80, height: 145, zIndex: 15 }}
-            artwork="/artwork/crimson.png"
+            tone="ember"
           />
           <ArtCard
             style={{ left: 633, top: 160, width: 122, height: 145, zIndex: 20 }}
-            artwork="/artwork/palm.png"
+            tone="forest"
           />
 
           <Vinyl />
@@ -127,16 +128,27 @@ function ArtCard({
   // zIndex goes into a CSS variable so the hover class can override it
   const { zIndex, ...position } = style;
 
+  // Each card floats with its own speed, height and phase so they never move in sync
+  const seed = Number(style.left ?? 0) + Number(style.top ?? 0) * 3;
+  const float = {
+    duration: 6 + (seed % 5),
+    delay: -(seed % 7),
+    distance: 6 + (seed % 5),
+  };
+
   return (
     <article
       style={
         {
           ...position,
           "--z": zIndex,
+          "--float": `${float.distance}px`,
+          animationDuration: `${float.duration}s`,
+          animationDelay: `${float.delay}s`,
           background: artwork ? "#081428" : toneGradients[tone],
         } as React.CSSProperties
       }
-      className={`group/card absolute z-[var(--z)] cursor-pointer overflow-hidden rounded-[1.1rem] border border-white/12 shadow-[0_28px_70px_rgba(0,0,0,0.55),inset_0_1px_0_rgba(255,255,255,0.08)] transition-[scale,box-shadow,border-color] duration-300 ease-out hover:z-[60] hover:scale-[1.07] hover:border-white/25 hover:shadow-[0_36px_90px_rgba(0,0,0,0.6),0_0_44px_rgba(59,130,246,0.3)] motion-reduce:transition-none motion-reduce:hover:scale-100 ${className}`}
+      className={`group/card absolute z-[var(--z)] animate-float cursor-pointer overflow-hidden rounded-[1.1rem] border border-white/12 shadow-[0_28px_70px_rgba(0,0,0,0.55),inset_0_1px_0_rgba(255,255,255,0.08)] transition-[scale,box-shadow,border-color] duration-300 ease-out hover:z-[60] hover:scale-[1.07] hover:border-white/25 hover:shadow-[0_36px_90px_rgba(0,0,0,0.6),0_0_44px_rgba(59,130,246,0.3)] motion-reduce:animate-none motion-reduce:transition-none motion-reduce:hover:scale-100 ${className}`}
     >
       {artwork && (
         <Image
