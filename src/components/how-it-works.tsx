@@ -42,9 +42,10 @@ export function HowItWorks() {
           </p>
           <h2
             id="how-it-works-heading"
-            className="mt-3 text-[clamp(1.6rem,4vw,2.1rem)] font-bold leading-[1.15] tracking-[-0.02em]"
+            className="mt-3 text-balance text-[clamp(1.6rem,4vw,2.1rem)] font-bold leading-[1.15] tracking-[-0.02em] xl:text-[clamp(1.6rem,2.2vw,2.1rem)]"
           >
-            From studio to the world. In four simple steps.
+            <span className="xl:block">From studio to the world.</span>{" "}
+            <span className="xl:block">In four simple steps.</span>
           </h2>
         </div>
 
@@ -53,9 +54,9 @@ export function HowItWorks() {
             const isLast = index === steps.length - 1;
 
             return (
-              <li key={step.title} className="relative flex gap-4 md:block">
+              <li key={step.title} className="group relative flex cursor-default gap-4 md:block">
                 <div className="flex shrink-0 flex-col items-center md:flex-row md:gap-4">
-                  <span className="flex size-11 shrink-0 items-center justify-center rounded-full border border-white/15 bg-white/5 text-sm font-semibold tabular-nums text-white/90">
+                  <span className="flex size-11 shrink-0 items-center justify-center rounded-full border border-white/15 bg-white/5 text-sm font-semibold tabular-nums text-white/90 transition-[background-color,border-color,box-shadow,color] duration-300 group-hover:border-blue-400 group-hover:bg-blue-600 group-hover:text-white group-hover:shadow-[0_0_24px_rgba(59,130,246,0.55)] motion-reduce:transition-none">
                     {String(index + 1).padStart(2, "0")}
                   </span>
 
@@ -66,7 +67,7 @@ export function HowItWorks() {
                     />
                   )}
 
-                  <span aria-hidden="true" className="hidden text-blue-200 md:block">
+                  <span aria-hidden="true" className="hidden text-blue-200 transition-[translate,color] duration-300 group-hover:-translate-y-0.5 group-hover:text-white motion-reduce:transition-none md:block">
                     {step.icon}
                   </span>
                 </div>
@@ -78,13 +79,13 @@ export function HowItWorks() {
                     </span>
                     {step.title}
                   </h3>
-                  <p className="mt-1.5 text-sm leading-6 text-white/65">
+                  <p className="mt-1.5 text-sm leading-6 text-white/65 transition-colors duration-300 group-hover:text-white/85">
                     {step.description}
                   </p>
                 </div>
 
                 {!isLast && (
-                  <ChevronIcon className="absolute -right-8 top-8 hidden text-blue-400/80 lg:block" />
+                  <ChevronIcon className="absolute -right-8 top-8 hidden text-blue-400/80 transition-[translate,color] duration-300 group-hover:translate-x-1 group-hover:text-blue-300 motion-reduce:transition-none lg:block" />
                 )}
               </li>
             );

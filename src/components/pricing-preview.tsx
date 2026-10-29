@@ -8,7 +8,7 @@ export function PricingPreview() {
       aria-labelledby="pricing-heading"
       className="bg-[#f6f8fc] text-slate-900"
     >
-      <div className="mx-auto grid w-full max-w-[90rem] grid-cols-1 gap-5 px-5 pb-16 sm:px-8 sm:pb-20 md:grid-cols-3 lg:px-10 lg:pb-24 xl:grid-cols-4 xl:gap-6">
+      <div className="mx-auto grid w-full max-w-[90rem] grid-cols-1 gap-5 px-5 pb-8 sm:px-8 sm:pb-10 md:grid-cols-3 lg:px-10 lg:pb-12 xl:grid-cols-4 xl:gap-6">
         <div className="flex flex-col md:col-span-3 xl:col-span-1 xl:pr-4">
           <p className="text-[0.65rem] font-bold uppercase tracking-[0.22em] text-slate-500 sm:text-xs">
             Pricing
