@@ -5,7 +5,7 @@ export function CtaBanner() {
   return (
     <section
       aria-labelledby="cta-heading"
-      className="bg-[#f6f8fc] px-5 pb-16 sm:px-8 sm:pb-20 lg:px-10 lg:pb-24"
+      className="bg-[#f6f8fc] px-5 pb-8 sm:px-8 sm:pb-10 lg:px-10 lg:pb-12"
     >
       <div>
         <div className="group relative isolate mx-auto w-full max-w-[90rem] overflow-hidden rounded-3xl border border-white/10 bg-[#060d1d] text-white shadow-[0_24px_60px_rgba(6,13,29,0.25)]">

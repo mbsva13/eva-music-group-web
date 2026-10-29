@@ -6,6 +6,8 @@ import { HowItWorks } from "@/components/how-it-works";
 import { AudienceSections } from "@/components/audience-sections";
 import { PricingPreview } from "@/components/pricing-preview";
 import { CtaBanner } from "@/components/cta-banner";
+import { SiteFooter } from "@/components/site-footer";
+
 
 
 export default function Home() {
@@ -21,6 +23,7 @@ export default function Home() {
 <PricingPreview />
 <CtaBanner />
       </main>
+       <SiteFooter />
     </>
   );
 }
