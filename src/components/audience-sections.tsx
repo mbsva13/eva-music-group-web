@@ -2,7 +2,7 @@ import { AudienceCard } from "./audience-card";
 
 export function AudienceSections() {
   return (
-    <div className="bg-[#f6f8fc] px-5 pb-16 sm:px-8 sm:pb-20 lg:px-10 lg:pb-24">
+    <div className="bg-[#f6f8fc] px-5 pb-8 sm:px-8 sm:pb-10 lg:px-10 lg:pb-12">
       <div className="mx-auto grid w-full max-w-[90rem] grid-cols-1 gap-5 lg:grid-cols-2 lg:gap-6">
         <AudienceCard
           id="for-artists"
