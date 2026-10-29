@@ -6,42 +6,39 @@ export function PricingPreview() {
   return (
     <section
       aria-labelledby="pricing-heading"
-      className="bg-[#f6f8fc] px-5 pb-16 sm:px-8 sm:pb-20 lg:px-10 lg:pb-24"
+      className="bg-[#f6f8fc] text-slate-900"
     >
-      <div className="mx-auto w-full max-w-[90rem]">
-        <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-            <p className="text-[0.65rem] font-bold uppercase tracking-[0.22em] text-slate-500 sm:text-xs">
-              Pricing
-            </p>
-            <h2
-              id="pricing-heading"
-              className="mt-3 text-[clamp(1.6rem,4vw,2.25rem)] font-bold leading-[1.15] tracking-[-0.025em] text-slate-950"
-            >
-              Plans for every stage of your journey.
-            </h2>
-          </div>
+      <div className="mx-auto grid w-full max-w-[90rem] grid-cols-1 gap-5 px-5 pb-16 sm:px-8 sm:pb-20 md:grid-cols-3 lg:px-10 lg:pb-24 xl:grid-cols-4 xl:gap-6">
+        <div className="flex flex-col md:col-span-3 xl:col-span-1 xl:pr-4">
+          <p className="text-[0.65rem] font-bold uppercase tracking-[0.22em] text-slate-500 sm:text-xs">
+            Pricing
+          </p>
+          <h2
+            id="pricing-heading"
+            className="mt-3 text-[clamp(1.6rem,4vw,2.25rem)] font-bold leading-[1.15] tracking-[-0.025em] text-slate-950"
+          >
+            Plans for every stage of your journey.
+          </h2>
+
+          <p className="mt-4 text-sm leading-6 text-slate-500">
+            Pricing is not final yet. Plans and features may change before
+            launch.
+          </p>
 
           <Link
             href="/pricing"
-            className="inline-flex shrink-0 items-center gap-1.5 rounded-md text-sm font-semibold text-blue-600 transition-colors hover:text-blue-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+            className="mt-5 inline-flex w-fit items-center gap-1.5 rounded-md text-sm font-semibold text-blue-600 transition-colors hover:text-blue-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 xl:mt-auto"
           >
             View full pricing
             <span aria-hidden="true">→</span>
           </Link>
         </div>
 
-        <ul className="mt-8 grid grid-cols-1 gap-5 md:grid-cols-3 lg:gap-6">
-          {pricingPlans.map((plan) => (
-            <li key={plan.id}>
-              <PricingCard plan={plan} />
-            </li>
-          ))}
-        </ul>
-
-        <p className="mt-6 text-sm text-slate-500">
-          Pricing is not final yet. Plans and features may change before launch.
-        </p>
+        {pricingPlans.map((plan) => (
+          <div key={plan.id} className="mx-auto w-full max-w-sm md:max-w-none">
+            <PricingCard plan={plan} />
+          </div>
+        ))}
       </div>
     </section>
   );
